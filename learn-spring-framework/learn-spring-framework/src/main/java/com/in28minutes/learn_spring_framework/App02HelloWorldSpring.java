@@ -19,6 +19,7 @@ public class App02HelloWorldSpring {
         System.out.println("name - " +context.getBean("age"));
         System.out.println("name - " +context.getBean("person"));
 //        System.out.println("name - " +context.getBean("address"));
-        System.out.println("name - " +context.getBean("address2"));
+//        Once spring has beans - can fetch it using bean name or class name
+        System.out.println("name - " +context.getBean(Address.class));
     }
 }
