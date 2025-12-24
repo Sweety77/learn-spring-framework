@@ -15,10 +15,10 @@ public class AppGamingBasicJava {
         Here to Introduce another game we need to do a lot of changes in code So, for that reason  may take some meore type
          */
 
-//        var marioGame = new MarioGame();
-        var superContraGame = new SuperContraGame();
+        var game = new MarioGame();
+//        var game = new SuperContraGame();
 
-        var gameRunner = new GameRunner(superContraGame);
+        var gameRunner = new GameRunner(game);
 
         gameRunner.run();
     }
