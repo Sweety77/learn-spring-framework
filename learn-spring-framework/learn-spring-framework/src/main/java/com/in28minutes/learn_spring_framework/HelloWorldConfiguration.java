@@ -10,7 +10,7 @@ Java 16 records significantly reduce verbosity by automatically generating const
     like equals, hashCode, and toString.”
     we can have custom methods in records as well
  */
-record Person (String name, int age ){}
+record Person (String name, int age, Address address ){}
 record Address(String firstLine, String city){}
 
 @Configuration
@@ -28,7 +28,19 @@ public class HelloWorldConfiguration {
 
     @Bean
     public Person person(){
-        return new Person("Ravi", 25);
+        return new Person("Ravi", 25, new Address("10th Ave SW", "Calgary"));
+    }
+
+
+    //create bean using existing bean - by method call
+    @Bean
+    public Person person2MethodCall(){
+        return new Person(name(),age(), address());
+    }
+
+    @Bean
+    public Person person3Parameters(String name, int age, Address address2){
+        return new Person(name, age, address2);
     }
 
     @Bean(name = "address2")// give different name to the bean which generally be the actual name of the method, use name attribute.

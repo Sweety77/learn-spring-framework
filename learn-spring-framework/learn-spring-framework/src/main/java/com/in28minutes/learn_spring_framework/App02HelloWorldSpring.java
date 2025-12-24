@@ -16,10 +16,12 @@ public class App02HelloWorldSpring {
 
         //Retrieve beans managed by Spring
         System.out.println("name - " +context.getBean("name"));
-        System.out.println("name - " +context.getBean("age"));
-        System.out.println("name - " +context.getBean("person"));
-//        System.out.println("name - " +context.getBean("address"));
+        System.out.println(context.getBean("age"));
+        System.out.println(context.getBean("person"));
+        System.out.println(context.getBean("person2MethodCall"));
+//        System.out.println(context.getBean("address"));
 //        Once spring has beans - can fetch it using bean name or class name
-        System.out.println("name - " +context.getBean(Address.class));
+        System.out.println(context.getBean(Address.class));
+        System.out.println(context.getBean("person3Parameters"));
     }
 }
