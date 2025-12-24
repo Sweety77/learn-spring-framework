@@ -1,19 +1,21 @@
 package com.in28minutes.learn_spring_framework.game;
 
-public class SuperContraGame implements GamingConsole{
+public class PacmanGame implements GamingConsole{
+
     public void up(){
         System.out.println("Up");
     }
 
     public void down(){
-        System.out.println("Sit down");
+        System.out.println("Down");
     }
 
     public void left(){
-        System.out.println("Go Back");
+        System.out.println("left");
     }
 
     public void right(){
-        System.out.println("Shoot a Bullet");
+        System.out.println("Right");
     }
+
 }
