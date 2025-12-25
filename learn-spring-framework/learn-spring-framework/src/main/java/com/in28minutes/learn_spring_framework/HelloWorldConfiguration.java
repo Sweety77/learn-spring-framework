@@ -39,12 +39,17 @@ public class HelloWorldConfiguration {
     }
 
     @Bean
-    public Person person3Parameters(String name, int age, Address address2){
-        return new Person(name, age, address2);
+    public Person person3Parameters(String name, int age, Address address3){
+        return new Person(name, age, address3);
     }
 
     @Bean(name = "address2")// give different name to the bean which generally be the actual name of the method, use name attribute.
     public Address address(){
+        return new Address("10th Ave SW", "Calgary");
+    }
+
+    @Bean(name = "address3")// give different name to the bean which generally be the actual name of the method, use name attribute.
+    public Address address3(){
         return new Address("10th Ave SW", "Calgary");
     }
 }

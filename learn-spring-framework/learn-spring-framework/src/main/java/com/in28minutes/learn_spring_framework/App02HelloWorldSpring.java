@@ -21,6 +21,8 @@ public class App02HelloWorldSpring {
         System.out.println(context.getBean("person2MethodCall"));
 //        System.out.println(context.getBean("address"));
 //        Once spring has beans - can fetch it using bean name or class name
+
+//        No qualifying bean of type 'com.in28minutes.learn_spring_framework.Address' available: expected single matching bean but found 2: address2,address3
         System.out.println(context.getBean(Address.class));
         System.out.println(context.getBean("person3Parameters"));
     }
