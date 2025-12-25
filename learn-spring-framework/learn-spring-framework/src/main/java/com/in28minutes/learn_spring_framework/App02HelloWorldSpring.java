@@ -4,6 +4,8 @@ import com.in28minutes.learn_spring_framework.game.GameRunner;
 import com.in28minutes.learn_spring_framework.game.PacmanGame;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class App02HelloWorldSpring {
 
     public static void main(String[] args) {
@@ -23,7 +25,10 @@ public class App02HelloWorldSpring {
 //        Once spring has beans - can fetch it using bean name or class name
 
 //        No qualifying bean of type 'com.in28minutes.learn_spring_framework.Address' available: expected single matching bean but found 2: address2,address3
-        System.out.println(context.getBean(Address.class));
+//        System.out.println(context.getBean(Address.class));
         System.out.println(context.getBean("person3Parameters"));
+
+        // get all the beans defined in the registry.
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
