@@ -1,5 +1,6 @@
 package com.in28minutes.learn_spring_framework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -52,6 +53,12 @@ public class HelloWorldConfiguration {
         return new Person(name, age, address);
     }
 
+    @Bean
+    @Primary
+    public Person person5qualifier(String name, int age, @Qualifier("address3qualifier") Address address){
+        return new Person(name, age, address);
+    }
+
     @Bean(name = "address2")// give different name to the bean which generally be the actual name of the method, use name attribute.
     @Primary
     public Address address(){
@@ -59,6 +66,7 @@ public class HelloWorldConfiguration {
     }
 
     @Bean(name = "address3")// give different name to the bean which generally be the actual name of the method, use name attribute.
+    @Qualifier("address3qualifier")
     public Address address3(){
         return new Address("10th Ave SW", "Calgary");
     }
