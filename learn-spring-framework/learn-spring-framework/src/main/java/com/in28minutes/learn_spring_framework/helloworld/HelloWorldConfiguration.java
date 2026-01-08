@@ -40,13 +40,15 @@ public class HelloWorldConfiguration {
         return new Person(name(),age(), address());
     }
 
+    // Create bean using bean name and pass it as parameter to the bean method.
+    // here names of the bean are name, age, address3
     @Bean
     public Person person3Parameters(String name, int age, Address address3){
         return new Person(name, age, address3);
     }
 
     @Bean
-    // NO Qualifing bean of type 'com.in28min...Address '
+    // NO Qualifying bean of type 'com.in28min...Address '
     // available: expected single matching bean but found 2: addredd2, address3
     @Primary
     public Person person4Parameters(String name, int age, Address address){
